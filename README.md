@@ -15,6 +15,7 @@ ls /home
 hostname
 docker version
 docker search ubuntu
+open http://hub.docker.com/
 docker pull ubuntu
 docker images ubuntu
 docker run ubuntu echo "Hello World"
@@ -93,8 +94,22 @@ view docker-compose.yml
 docker-compose up
 ```
 
+## Multi-stage Builds
+
+```bash
+cd ../golang
+view Dockerfile
+docker build -t gohello .
+docker run -dP gohello
+docker port <ID>
+open http://localhost:<PORT>
+docker images gohello
+```
+
 ## Further topics
 
-* Multi-step builds
+* Containerize all the things: Jess' [Dockerfiles](https://github.com/jessfraz/dockerfiles)
+* [Selenium](https://github.com/SeleniumHQ/docker-selenium) testing in Docker
+* [Microclimate](https://microclimate-dev2ops.github.io)
 * Docker Swarm vs Kubernetes
 * Windows Containers
